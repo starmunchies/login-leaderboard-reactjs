@@ -21,6 +21,7 @@ function Dashboard(props) {
     props.history.push('/login');
     window.location.reload(false);
   }
+
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   };
@@ -62,10 +63,7 @@ function Dashboard(props) {
   }
 
   /**
-   * find a way to have the logout button in the top menu instead of having
-   * it at the end 
-   * 
-   * kinda cumbersome 
+   * Implemented the logout into the navigation bar
    * 
    * 
    */
@@ -98,7 +96,6 @@ function Dashboard(props) {
         </div>
         <div class="login">
           <br /><br />
-          <input type="button" onClick={handleLogout} value="Logout" />
         </div>
       </div>
     </div>

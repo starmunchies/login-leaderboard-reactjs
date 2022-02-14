@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 import Login from './Login';
+import Logout from './Logout';
 import Dashboard from './Dashboard';
 import Home from './Home';
 
@@ -46,8 +47,9 @@ function App() {
           <div>
             <div className="header">
               <NavLink exact activeClassName="active" to="/">Home</NavLink>
+             
               <NavLink activeClassName="active" to="/login">Login</NavLink><small></small>
-
+             
             </div>
             <div className="content">
               <Switch>
@@ -70,9 +72,9 @@ function App() {
               <NavLink exact activeClassName="active" to="/">Home</NavLink>
 
               <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small></small>
-
-              {/* <NavLink activeClassName="active" to="/logout">Logout</NavLink><small></small> */}
-
+            
+              <NavLink activeClassName="active" to="/Logout">Logout</NavLink><small></small>
+              
          
              
             </div>
@@ -80,7 +82,7 @@ function App() {
               <Switch>
                 <Route exact path="/" component={Home} />
                 
-                {/* <Route exact path="/logout" component={handleLogout} /> */}
+                <Route exact path="/Logout" component={Logout} />
 
                 <PrivateRoute path="/dashboard" component={Dashboard} />
 

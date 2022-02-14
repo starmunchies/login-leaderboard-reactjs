@@ -25,21 +25,22 @@ function Login(props) {
     });
   }
 
+
   return (
     <div class ="holder">
     <div class="login">
       <h4>Login to continue</h4><br /><br />
       <div>
         Username<br />
-        <input type="text" {...username} autoComplete="new-password" />
+        <input type="text" {...username} autoComplete="username" />
       </div>
       <div style={{ marginTop: 10 }}>
         Password<br />
-        <input type="password" {...password} autoComplete="new-password" />
+        <input type="password" {...password} autoComplete="password"  />
       </div>
       {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
       <br />
-      <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
+      <input type="button"  value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
     </div>
     </div>
   );
