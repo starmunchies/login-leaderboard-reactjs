@@ -2,8 +2,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { getToken, getUser, removeUserSession } from './Utils/Common';
+
 // note any localhost has to be changed to the actual ip address of where thenode js server is actually situated
-// even if it is on the same server as react js doesnt know this 
+// even if it is on the same server as react js doesnt know this as its on the client side
 
 function Dashboard(props) {
   const token = getToken();
@@ -13,14 +14,8 @@ function Dashboard(props) {
   const username = useFormInput('');
   const usernameadd = useFormInput('');
   const xp = useFormInput('');
-  const user = getUser();
+  //const user = getUser();
 
-  // handle click event of logout button
-  const handleLogout = () => {
-    removeUserSession();
-    props.history.push('/login');
-    window.location.reload(false);
-  }
 
   const config = {
     headers: { Authorization: `Bearer ${token}` }
@@ -70,8 +65,8 @@ function Dashboard(props) {
 
   return (
     <div>
-      <div class="holder">
-        <div class="login">
+      <div className="holder">
+        <div className="login">
           <h4>Add XP</h4><br /><br />
           <div>
             Username<br />
@@ -85,8 +80,8 @@ function Dashboard(props) {
           <br /><br />
         </div>
       </div>
-      <div class="holder">
-        <div class="login">
+      <div className="holder">
+        <div className="login">
           <h4>Add New User</h4><br /><br />
           <div>
             Username<br />
@@ -94,7 +89,7 @@ function Dashboard(props) {
           </div>
           <input type="button" onClick={handleadduser} value="Add User" /><br />
         </div>
-        <div class="login">
+        <div className="login">
           <br /><br />
         </div>
       </div>

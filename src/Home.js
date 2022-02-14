@@ -1,7 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import PersonList from './components/leaderboardlist.js';
-import './test.css';
+import './table.css';
 
 function Home() {
 
