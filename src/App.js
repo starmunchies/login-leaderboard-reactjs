@@ -8,7 +8,7 @@ import Home from './Home';
 
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicRoute from './Utils/PublicRoute';
-import handleLogout from './Dashboard'
+
 import { getToken, removeUserSession, setUserSession } from './Utils/Common';
 
 function App() {
