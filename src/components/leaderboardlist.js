@@ -26,7 +26,6 @@ export default class PersonList extends React.Component {
       <table class="styled-table">
       <thead >
       <tr>
-
       <th>User</th>
       <th>XP</th>
       </tr>

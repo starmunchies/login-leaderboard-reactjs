@@ -8,6 +8,7 @@ import Home from './Home';
 
 import PrivateRoute from './Utils/PrivateRoute';
 import PublicRoute from './Utils/PublicRoute';
+import handleLogout from './Dashboard'
 import { getToken, removeUserSession, setUserSession } from './Utils/Common';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
       headers: { 'Access-Control-Allow-Origin': '*' }
     };
 
-    axios.get(`http://localhost:4000/verifyToken?token=${token}`,config).then(response => {
+    axios.get(`http://localhost:4000/verifyToken?token=${token}`, config).then(response => {
       setUserSession(response.data.token, response.data.user);
       setAuthLoading(false);
     }).catch(error => {
@@ -36,26 +37,62 @@ function App() {
     return <div className="content">Checking Authentication...</div>
   }
 
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <div>
-          <div className="header">
-            <NavLink exact activeClassName="active" to="/">Home</NavLink>
-            <NavLink activeClassName="active" to="/login">Login</NavLink><small>(Access without token only)</small>
-            <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small>(Access with token only)</small>
+
+
+  if (getToken() == null) {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <div>
+            <div className="header">
+              <NavLink exact activeClassName="active" to="/">Home</NavLink>
+              <NavLink activeClassName="active" to="/login">Login</NavLink><small></small>
+
+            </div>
+            <div className="content">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <PublicRoute path="/login" component={Login} />
+
+              </Switch>
+            </div>
           </div>
-          <div className="content">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <PublicRoute path="/login" component={Login} />
-              <PrivateRoute path="/dashboard" component={Dashboard} />
-            </Switch>
+        </BrowserRouter>
+      </div>
+    );
+  }
+  else {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <div>
+            <div className="header">
+              <NavLink exact activeClassName="active" to="/">Home</NavLink>
+
+              <NavLink activeClassName="active" to="/dashboard">Dashboard</NavLink><small></small>
+
+              {/* <NavLink activeClassName="active" to="/logout">Logout</NavLink><small></small> */}
+
+         
+             
+            </div>
+            <div className="content">
+              <Switch>
+                <Route exact path="/" component={Home} />
+                
+                {/* <Route exact path="/logout" component={handleLogout} /> */}
+
+                <PrivateRoute path="/dashboard" component={Dashboard} />
+
+
+              </Switch>
+            </div>
           </div>
-        </div>
-      </BrowserRouter>
-    </div>
-  );
+        </BrowserRouter>
+      </div>
+    );
+
+  }
 }
 
 export default App;

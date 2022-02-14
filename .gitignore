@@ -1,0 +1,38 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+public/logo192.png
+public/logo192.png:Zone.Identifier
+public/robots.txt
+public/robots.txt:Zone.Identifier
+src/nohup.out
+src/Utils/PublicRoute.js:Zone.Identifier
+src/Utils/PrivateRoute.js:Zone.Identifier
+package-lock.json:Zone.Identifier
+public/favicon.ico
+public/manifest.json:Zone.Identifier
+src/App.js:Zone.Identifier
+src/index.css:Zone.Identifier
+src/Home.js:Zone.Identifier
+src/Dashboard.js:Zone.Identifier
+public/logo512.png:Zone.Identifier

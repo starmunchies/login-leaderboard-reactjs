@@ -23,7 +23,22 @@ code {
   width:20%;
   margin:auto;
   margin-bottom:4%;
-justify-content: center;
+  justify-content: center;
+
+}
+
+.holder{
+  
+ /*  border-radius: 25px; */
+  background: #8ecde6;
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  margin: 0 auto 100px;
+  padding: 35px 35px;
+  
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin-bottom:4%;
 }
 .login input{
   width: 100%;

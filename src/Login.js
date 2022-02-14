@@ -17,6 +17,7 @@ function Login(props) {
       setLoading(false);
       setUserSession(response.data.token, response.data.user);
       props.history.push('/dashboard');
+      window.location.reload(false);
     }).catch(error => {
       setLoading(false);
       if (error.response.status === 401) setError(error.response.data.message);
@@ -25,6 +26,7 @@ function Login(props) {
   }
 
   return (
+    <div class ="holder">
     <div class="login">
       <h4>Login to continue</h4><br /><br />
       <div>
@@ -38,6 +40,7 @@ function Login(props) {
       {error && <><small style={{ color: 'red' }}>{error}</small><br /></>}<br />
       <br />
       <input type="button" value={loading ? 'Loading...' : 'Login'} onClick={handleLogin} disabled={loading} /><br />
+    </div>
     </div>
   );
 }
