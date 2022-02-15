@@ -12,7 +12,6 @@ function Logout(props) {
 
   return(
     handleLogout()
-
   );
 }
 export default Logout;

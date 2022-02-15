@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { getToken, getUser, removeUserSession } from './Utils/Common';
+import { getToken} from './Utils/Common';
 
 // note any localhost has to be changed to the actual ip address of where thenode js server is actually situated
 // even if it is on the same server as react js doesnt know this as its on the client side
