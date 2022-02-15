@@ -47,9 +47,7 @@ function App() {
           <div>
             <div className="header">
               <NavLink exact activeClassName="active" to="/">Home</NavLink>
-{/* 
 
-              <NavLink activeClassName="active" to="/Announcements">Announcements</NavLink><small></small> */}
              
               <NavLink activeClassName="active" to="/login">Login</NavLink><small></small>
              

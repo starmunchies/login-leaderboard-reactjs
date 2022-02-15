@@ -7,14 +7,14 @@ export default class PersonList extends React.Component {
   }
 
   
-
+//make sure this function is run before implementing the return 
   componentDidMount() {
 
     const config = {
       headers: { 'Access-Control-Allow-Origin': '*' }
     };
 
-    axios.get(`http://localhost:4000/leaderboard`,{crossdomain: true})
+    axios.get('http://localhost:4000/leaderboard',{crossdomain: true})
       .then(res => {
         const persons = res.data;
         this.setState({ persons });
